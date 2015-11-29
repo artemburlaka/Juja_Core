@@ -9,7 +9,7 @@ public class Lab18 {
         System.out.println(eval("2*3"));
         System.out.println(eval("(1+3)*2"));
         System.out.println(eval("((13/6)*2-5)+1"));
-                       
+
     }
 
     public static int eval(String expr) {
