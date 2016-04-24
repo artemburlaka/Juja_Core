@@ -5,7 +5,7 @@ package Module2;
  */
 public class Lab15 {
     public static void main(String[] args) {
-        int [] array1 = {3, 1, 2};
+        int [] array1 = {3, 1, 2, 5, -2};
         sort(array1);
         for (int i = 0; i < array1.length; i++) {
             System.out.println(array1[i]);

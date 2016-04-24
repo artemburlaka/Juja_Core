@@ -16,15 +16,20 @@ public class Lab19 {
         System.out.println("1 kop = "+exchangeAmountOfCoinsBrutForce(a));
         System.out.println("2 kop = "+exchangeAmountOfCoinsBrutForce(b));
         System.out.println("5 kop = "+exchangeAmountOfCoinsBrutForce(c));
-//        System.out.println("10 kop = "+exchangeAmountOfCoinsBrutForce(d));
-//        System.out.println("25 kop = "+exchangeAmountOfCoinsBrutForce(e));
-//        System.out.println("50 kop = "+exchangeAmountOfCoinsBrutForce(f));
-//        System.out.println("100 kop = "+exchangeAmountOfCoinsBrutForce(grn));
+        System.out.println("10 kop = "+exchangeAmountOfCoinsBrutForce(d));
+        System.out.println("25 kop = "+exchangeAmountOfCoinsBrutForce(e));
+        System.out.println("50 kop = "+exchangeAmountOfCoinsBrutForce(f));
+        System.out.println("100 kop = "+exchangeAmountOfCoinsBrutForce(grn));
+
+
 
 
     }
     public static int exchangeAmountOfCoinsBrutForce(int amountForExchange) {
 
+        if (amountForExchange == 0) {
+            return 0;
+        }
 
         int a = 1;
         int b = 2;
@@ -40,52 +45,47 @@ public class Lab19 {
         int if50 = 0;
 
         int result = 0;
-        while (ia <= amountForExchange/a)
+        int count = 0;
+        while (if50 <= amountForExchange)
         {
-            while (ib <= amountForExchange/b)
+            if (ie >= amountForExchange)
+                ie = 0;
+            while (ie <= amountForExchange)
             {
-                while (ic <= amountForExchange/c)
+                if (id >= amountForExchange)
+                    id = 0;
+                while (id <= amountForExchange)
                 {
-//                    while (id <= amountForExchange/d)
-//                    {
-//                        while (ie <= amountForExchange/e)
-//                        {
-//                            while (if50 <= amountForExchange/f50)
-//                            {
-//                                if50 = if50 + 50;
-//                                if (if50 == amountForExchange)
-//                                    result++;
-//                            }
-//                            ie = ie + 25;
-//                            if (if50 > amountForExchange)
-//                                if50 = 0;
-//                            if (ie == amountForExchange)
-//                                result++;
-//                        }
-//                        id = id + 10;
-//                        if (ie > amountForExchange)
-//                            ie = 0;
-//                        if (id == amountForExchange)
-//                            result++;
-//                    }
-                    ic = ic + 5;
-//                    if (id > amountForExchange)
-//                        id = 0;
-                    if (ic == amountForExchange)
-                        result++;
+                    if (ic >= amountForExchange)
+                        ic = 0;
+                    while (ic <= amountForExchange)
+                    {
+                        if (ib >= amountForExchange)
+                            ib = 0;
+                        while (ib <= amountForExchange)
+                        {
+                            if (ia >= amountForExchange)
+                                ia = 0;
+                            while (ia <= amountForExchange)
+                            {
+                                if ((if50 + ie + id + ic + ib + ia ) == amountForExchange) {
+                                    result++;
+                                }
+                                count++;
+                                ia++;
+                            }
+                            ib = ib + 2;
+                        }
+                        ic = ic + 5;
+                    }
+                    id = id + 10;
                 }
-                ib = ib + 2;
-                if (ic > amountForExchange)
-                    ic = 0;
-                if (ib == amountForExchange)
-                    result++;
+                ie = ie + 25;
             }
-            ia++;
-            if (ib > amountForExchange)
-                ib = 0;
-            if (ia == amountForExchange)
-                result++;
+            if50 = if50 + 50;
+
         }
+   //     System.out.println("count = " + count);
 
         return result;
     }
